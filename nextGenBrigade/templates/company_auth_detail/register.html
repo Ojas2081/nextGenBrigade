@@ -1,0 +1,62 @@
+{% extends 'company_auth_detail/base.html' %}
+{% load static %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+  <div id="successMessage" class="alert alert-success alert-dismissible fade show d-none text-center" role="alert">
+    Company registered successfully!
+  </div>
+  <div id="errorAlert" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+    <span id="errorAlertText"></span>
+  </div>
+  
+  
+<h3 class="text-center mb-4">Register</h3>
+<form id="registrationForm">
+  {% csrf_token %}
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label for="company_name" class="form-label">Company Name</label>
+      <input type="text" class="form-control" id="company_name">
+    </div>
+    <div class="col-md-6">
+      <label for="company_email" class="form-label">Company Email</label>
+      <input type="email" class="form-control" id="company_email">
+    </div>
+    <div class="col-md-6">
+      <label for="password1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password1">
+    </div>
+    <div class="col-md-6">
+      <label for="password2" class="form-label">Confirm Password</label>
+      <input type="password" class="form-control" id="password2">
+      <small id="passwordMatchIndicator" class="form-text"></small>
+    </div>
+    <div class="col-12">
+      <label for="address" class="form-label">Address</label>
+      <textarea class="form-control" id="address" rows="2"></textarea>
+    </div>
+    <div class="col-md-6">
+      <label for="company_contact" class="form-label">Company Contact</label>
+      <input type="tel" class="form-control" id="company_contact">
+    </div>
+    <div class="col-md-6">
+      <label for="zipcode" class="form-label">Zipcode</label>
+      <input type="text" class="form-control" id="zipcode">
+    </div>
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-primary mt-3">Register</button>
+    </div>
+    <div class="text-center mt-3">
+      <p>Already have an account? <a href="/">Login here</a></p>
+    </div>
+  </div>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'company_auth_detail/js/register.js' %}"></script>
+{% endblock %}
+

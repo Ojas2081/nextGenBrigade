@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: django_db_nextGen
+      POSTGRES_USER: django_user_nextGen
+      POSTGRES_PASSWORD: secretpassword_nextGen
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    # mount your code so runserver auto‐reload works
+    volumes:
+      - .:/app
+    working_dir: /app
+    # publish BOTH host ports to the same container port 8000 
+    ports:
+      - "8001:8000"
+    environment:
+      DATABASE_URL: postgres://django_user_nextGen:secretpassword_nextGen@db:5432/django_db_nextGen
+      DJANGO_ENV: dev
+    depends_on:
+      - db
+    command: >
+      sh -c "
+        cd nextGenBrigade;
+        if [ \"$DJANGO_ENV\" = \"dev\" ]; then
+          python manage.py runserver 0.0.0.0:8000;
+        else
+          gunicorn nextGenBrigade.wsgi:application --bind 0.0.0.0:8000;
+        fi
+      "
+volumes:
+  db_data:
+    driver: local

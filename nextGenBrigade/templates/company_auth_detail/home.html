@@ -1,0 +1,137 @@
+
+
+
+
+
+{% extends 'company_auth_detail/base.html' %}
+{% load static %}
+
+{% block navbar %}
+  {% include "company_auth_detail/navbar.html" %}
+{% endblock %}
+
+{% block content %}
+<main class="home-root">
+
+  <!-- HERO / WELCOME -->
+  <section class="hero">
+    
+    <div class="hero-left">
+      <h1>About Us</h1>
+      <h1>Hi, {{ request.user.company_name|default:"Company" }} 👋</h1>
+      <p class="lead">
+        Here’s a quick view of us and featured company resources.
+      </p>
+
+      <div class="stats row">
+        <div class="stat col-md-6">
+          <div class="stat-value">6</div>
+          <div class="stat-label">Active Projects</div>
+        </div>
+      
+        <div class="stat col-md-6">
+          <div class="stat-value">4.8 / 5</div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <img src="{% static 'company_auth_detail/images/hero.jpeg' %}"
+           alt="Dashboard illustration" height="350" width="300"
+           class="hero-img" loading="lazy">
+    </div>
+  </section>
+
+  <!-- GALLERY / FEATURE CARDS -->
+  <section class="gallery">
+    <h2 class="section-title">Featured resources</h2>
+    <p class="section-sub">Hand-picked items and quick actions for your company</p>
+
+    <div class="grid">
+      <!-- Card 1 -->
+      <article class="card">
+        <div class="card-media">
+          <img src="{% static 'company_auth_detail/images/card-1.jpeg' %}" height="350" width="300" alt="Analytics" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Analytics Overview</h3>
+          <p>Check performance metrics and export reports for this month.</p>
+          <div class="card-meta">
+            <span class="badge">New</span>
+            <a class="card-cta" href="#">Open</a>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- Card 3 -->
+      <article class="card">
+        <div class="card-media">
+          <img src="{% static 'company_auth_detail/images/card-3.jpg' %}" alt="Team" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Team Members</h3>
+          <p>Manage team access, roles, and invitations.</p>
+          <div class="card-meta">
+            
+            <!-- <span><a target="_blank" href="">Devashish Joshi</a></span>
+            <span><a target="_blank" href="https://www.linkedin.com/in/ojas-acharekar">Ojas Acharekar</a></span>
+            <span><a target="_blank" href="www.linkedin.com/in/swati-shukla019">Swati Shukla</a></span>
+            <span><a target="_blank" href="https://www.linkedin.com/in/poorvi-bhatncirl">Poorvi Bhatt</a></span>
+            <span><a target="_blank" href="https://www.linkedin.com/in/simi-correia/">Simmi Correia</a></span> -->
+            <ul>
+    <li><a target="_blank" href="">Devashish Joshi</a></li>
+    <li><a target="_blank" href="https://www.linkedin.com/in/ojas-acharekar">Ojas Acharekar</a></li>
+    <li><a target="_blank" href="www.linkedin.com/in/swati-shukla019">Swati Shukla</a></li>
+    <li><a target="_blank" href="https://www.linkedin.com/in/poorvi-bhatncirl">Poorvi Bhatt</a></li>
+    <li><a target="_blank" href="https://www.linkedin.com/in/simi-correia/">Simmi Correia</a></li>
+  </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card">
+        <div class="card-media">
+          <img src="{% static 'company_auth_detail/images/card-4.jpg' %}" alt="Support" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Support Center</h3>
+          <p>Open tickets, track responses, and browse help articles.</p>
+          <div class="card-meta">
+            <span class="badge">Help</span>
+            <a class="card-cta" href="#">Open</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="card">
+        <div class="card-media">
+          <img src="{% static 'company_auth_detail/images/card-5.jpg' %}" alt="Integrations" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Integrations</h3>
+          <p>Connect your tools — CRMs, analytics, and payment platforms.</p>
+          <div class="card-meta">
+            <span class="badge">Popular</span>
+            <a class="card-cta" href="#">Connect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+
+    </div>
+  </section>
+
+</main>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'company_auth_detail/js/home.js' %}" defer></script>
+  <script src="{% static 'company_auth_detail/js/logout.js' %}" defer></script>
+{% endblock %}
+
+

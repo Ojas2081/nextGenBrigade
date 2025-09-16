@@ -1,0 +1,35 @@
+{% extends 'company_auth_detail/base.html' %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div id="successMessage" class="alert alert-success alert-dismissible fade show d-none text-center" role="alert">
+    User registered successfully!
+  </div>
+<div id="loginErrorAlert" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+    <span id="loginErrorText"></span>
+  </div>
+<h3 class="text-center mb-4">Login</h3>
+<form id="loginForm">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="company_email" class="form-label">Company Email</label>
+    <input type="email" class="form-control" id="company_email" >
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" >
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-success">Login</button>
+  </div>
+  <div class="text-center mt-3">
+    <p>Don't have an account? <a href="/signup">Register here</a></p>
+  </div>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'company_auth_detail/js/login.js' %}"></script>
+{% endblock %}
+

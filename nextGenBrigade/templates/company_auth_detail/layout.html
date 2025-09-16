@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'company_auth_detail/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'company_auth_detail/css/bootstrap.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>NextGenBrigade</title> 
+</head>
+<body>
+
+    {% include 'company_auth_detail/navbar.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    <script src="{% static 'company_auth_detail/js/jquery-slim.js' %}"></script>
+    <script src="{% static 'company_auth_detail/js/popper.js' %}"></script>
+    <script src="{% static 'company_auth_detail/js/bootstrap.js' %}"></script>
+</body>
+</html>
