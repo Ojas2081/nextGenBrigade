@@ -1,38 +1,34 @@
 services:
   db:
     image: postgres:15
+    container_name: postgres_db
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: django_db_nextGen
-      POSTGRES_USER: django_user_nextGen
-      POSTGRES_PASSWORD: secretpassword_nextGen
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 10s
 
   web:
     build: .
-    # mount your code so runserver auto‐reload works
-    volumes:
-      - .:/app
-    working_dir: /app
-    # publish BOTH host ports to the same container port 8000 
+    container_name: django_nextGenBrigade
     ports:
       - "8001:8000"
-    environment:
-      DATABASE_URL: postgres://django_user_nextGen:secretpassword_nextGen@db:5432/django_db_nextGen
-      DJANGO_ENV: dev
+    env_file:
+      - .env
     depends_on:
-      - db
-    command: >
-      sh -c "
-        cd nextGenBrigade;
-        if [ \"$DJANGO_ENV\" = \"dev\" ]; then
-          python manage.py runserver 0.0.0.0:8000;
-        else
-          gunicorn nextGenBrigade.wsgi:application --bind 0.0.0.0:8000;
-        fi
-      "
+      db:
+        condition: service_healthy
+        restart: true
+    volumes:
+      - ./nextGenBrigade:/app
 volumes:
-  db_data:
-    driver: local
+  postgres_data:

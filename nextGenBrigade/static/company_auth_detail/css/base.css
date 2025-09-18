@@ -86,7 +86,7 @@ table td {
 }
 
 /* HERO */
-.hero{
+/* .hero{
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: var(--gap);
@@ -95,6 +95,9 @@ table td {
   background: var(--bg);
   padding: 1.2rem;
   border-radius: 14px;
+} */
+.hero {
+  text-align: justify;
 }
 .hero-left h1{
   font-size: 1.6rem;
@@ -132,13 +135,13 @@ table td {
 }
 
 /* hero image */
-.hero-right { text-align:center; }
+/* .hero-right { text-align:center; }
 .hero-img{
   width:100%;
   max-width:320px;
   border-radius:10px;
   box-shadow: var(--shadow);
-}
+} */
 
 /* SECTION titles */
 .section-title{

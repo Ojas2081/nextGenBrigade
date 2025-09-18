@@ -1,0 +1,94 @@
+{% extends 'company_auth_detail/base.html' %} 
+{% load static %} 
+{% block navbar%} 
+{% include "company_auth_detail/navbar.html" %} 
+{% endblock %} 
+{% block content %}
+<body>
+  <!-- Header -->
+  <section class="header">
+    <h1>Pricing</h1>
+    <p class="subtitle">Affordable pricing for sustainable choices</p>
+    <p class="desc">
+      Providing transparent pricing for our sustainability services allows clients to assess their investment in a greener future.
+    </p>
+  </section>
+
+  <!-- Pricing Cards -->
+  <section class="pricing-container">
+    <div class="card">
+      <h3>Beginner</h3>
+      <h2>$ 150.00 <span>/hour</span></h2>
+      <p>Ideal for eco-conscious consumers. Essential features to promote sustainability and green practices. Perfect for small teams.</p>
+      <button class="btn">Start Now</button>
+      <ul>
+        <li class="check">Sales & marketing for eco-conscious brands</li>
+        <li class="check">Sustainability Consulting</li>
+        <li class="cross">No customization</li>
+        <li class="cross">24/7 support</li>
+      </ul>
+      <p class="note">Instant setup, satisfaction guaranteed or your money back.</p>
+    </div>
+
+    <div class="card highlight">
+      <h3>Expert</h3>
+      <h2>$ 25.00 <span>/month</span></h2>
+      <p>Comprehensive tools for growing sustainable businesses. Optimize your processes and productivity across your team.</p>
+      <button class="btn">Start Now</button>
+      <ul>
+        <li class="check">Complete CRM for eco-conscious teams</li>
+        <li class="check">Access all resources</li>
+        <li class="check">Limited customization</li>
+        <li class="check">Email support</li>
+      </ul>
+      <p class="note">Instant setup, satisfaction guaranteed or your money back.</p>
+    </div>
+
+    <div class="card">
+      <h3>Pro</h3>
+      <h2>$ 45.00 <span>/month</span></h2>
+      <p>Advanced solutions for eco-friendly enterprises. Innovative features and top-tier support for optimal performance.</p>
+      <button class="btn-outline">Contact Us</button>
+      <ul>
+        <li class="check">Unlimited sustainability support</li>
+        <li class="check">All modules & features for sustainability</li>
+        <li class="check">Unlimited customization</li>
+        <li class="check">24/7 toll-free support</li>
+      </ul>
+      <p class="note">Instant setup, satisfaction guaranteed or your money back.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>Designed <span>for companies</span></h3>
+        <p>
+          We are a team of passionate people whose goal is to improve everyone’s life through disruptive products.
+          Our products are designed for small to medium-sized companies willing to optimize their performance.
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <p><b>My Company</b></p>
+        <p>250 Executive Park Blvd, Suite 3400<br>San Francisco CA 94134<br>United States</p>
+        <p>📞 +353 87 0303 619</p>
+        <p>📧 hello@mycompany.com</p>
+        <div class="socials">
+          <a href="#">🌿</a>
+          <a href="#">📘</a>
+          <a href="#">📷</a>
+          <a href="#">💼</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © Company name</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+{% endblock %} {% block scripts %}
+{% endblock %}

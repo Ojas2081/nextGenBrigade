@@ -1,26 +1,38 @@
-
-
-
-
-
-{% extends 'company_auth_detail/base.html' %}
-{% load static %}
-
-{% block navbar %}
-  {% include "company_auth_detail/navbar.html" %}
-{% endblock %}
-
+{% extends 'company_auth_detail/base.html' %} 
+{% load static %} 
+{% block navbar%} 
+{% include "company_auth_detail/navbar.html" %} 
+{% endblock %} 
 {% block content %}
 <main class="home-root">
-
   <!-- HERO / WELCOME -->
   <section class="hero">
-    
     <div class="hero-left">
       <h1>About Us</h1>
       <h1>Hi, {{ request.user.company_name|default:"Company" }} 👋</h1>
       <p class="lead">
-        Here’s a quick view of us and featured company resources.
+        At your Organization, we are driven by a simple yet powerful mission:
+        Embracing Nature and Inspiring Communities to Act for the Planet. We
+        believe sustainability is not just a choice—it’s a responsibility. Our
+        eco-enthusiastic team is committed to tackling pressing environmental
+        challenges such as carbon footprint reduction, afforestation, waste
+        management, and biodiversity restoration. Through initiatives like tree
+        plantation, adoption programs, forest restoration, ocean life support,
+        and recycling station setups, we connect individuals, communities, and
+        organizations to meaningful climate action. By integrating technology
+        with nature-based solutions, we ensure transparency, accountability, and
+        long-term impact—whether it’s tracking carbon credits, supporting green
+        jobs, or creating circular waste systems. We exist at the intersection
+        of purpose and progress, helping people and organizations: Measure,
+        manage, and minimize their environmental footprint. Reduce, reuse, and
+        renew resources for a sustainable future. Balance and breathe by
+        restoring forests and ecosystems. Transform carbon into currency through
+        offsets and responsible practices. Together with our partners—citizens,
+        farmers, businesses, and governments—we aim to turn sustainability into
+        a collective movement. Every tree planted, every waste recycled, and
+        every drop of clean water shared brings us closer to a greener tomorrow.
+        <br />
+        🌱 Roots of Responsibility – Plant. Pin. Protect.
       </p>
 
       <div class="stats row">
@@ -28,31 +40,33 @@
           <div class="stat-value">6</div>
           <div class="stat-label">Active Projects</div>
         </div>
-      
+
         <div class="stat col-md-6">
           <div class="stat-value">4.8 / 5</div>
           <div class="stat-label">Average Rating</div>
         </div>
       </div>
     </div>
-
-    <div class="hero-right">
-      <img src="{% static 'company_auth_detail/images/hero.jpeg' %}"
-           alt="Dashboard illustration" height="350" width="300"
-           class="hero-img" loading="lazy">
-    </div>
   </section>
 
   <!-- GALLERY / FEATURE CARDS -->
   <section class="gallery">
     <h2 class="section-title">Featured resources</h2>
-    <p class="section-sub">Hand-picked items and quick actions for your company</p>
+    <p class="section-sub">
+      Hand-picked items and quick actions for your company
+    </p>
 
     <div class="grid">
       <!-- Card 1 -->
       <article class="card">
         <div class="card-media">
-          <img src="{% static 'company_auth_detail/images/card-1.jpeg' %}" height="350" width="300" alt="Analytics" loading="lazy">
+          <img
+            src="{% static 'company_auth_detail/images/card-1.jpeg' %}"
+            height="350"
+            width="300"
+            alt="Analytics"
+            loading="lazy"
+          />
         </div>
         <div class="card-body">
           <h3>Analytics Overview</h3>
@@ -64,29 +78,48 @@
         </div>
       </article>
 
-
       <!-- Card 3 -->
       <article class="card">
         <div class="card-media">
-          <img src="{% static 'company_auth_detail/images/card-3.jpg' %}" alt="Team" loading="lazy">
+          <img
+            src="{% static 'company_auth_detail/images/card-3.jpg' %}"
+            alt="Team"
+            loading="lazy"
+          />
         </div>
         <div class="card-body">
           <h3>Team Members</h3>
           <p>Manage team access, roles, and invitations.</p>
           <div class="card-meta">
-            
-            <!-- <span><a target="_blank" href="">Devashish Joshi</a></span>
-            <span><a target="_blank" href="https://www.linkedin.com/in/ojas-acharekar">Ojas Acharekar</a></span>
-            <span><a target="_blank" href="www.linkedin.com/in/swati-shukla019">Swati Shukla</a></span>
-            <span><a target="_blank" href="https://www.linkedin.com/in/poorvi-bhatncirl">Poorvi Bhatt</a></span>
-            <span><a target="_blank" href="https://www.linkedin.com/in/simi-correia/">Simmi Correia</a></span> -->
             <ul>
-    <li><a target="_blank" href="">Devashish Joshi</a></li>
-    <li><a target="_blank" href="https://www.linkedin.com/in/ojas-acharekar">Ojas Acharekar</a></li>
-    <li><a target="_blank" href="www.linkedin.com/in/swati-shukla019">Swati Shukla</a></li>
-    <li><a target="_blank" href="https://www.linkedin.com/in/poorvi-bhatncirl">Poorvi Bhatt</a></li>
-    <li><a target="_blank" href="https://www.linkedin.com/in/simi-correia/">Simmi Correia</a></li>
-  </ul>
+              <li><a target="_blank" href="">Devashish Joshi</a></li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/ojas-acharekar"
+                  >Ojas Acharekar</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="www.linkedin.com/in/swati-shukla019"
+                  >Swati Shukla</a
+                >
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/poorvi-bhatncirl"
+                  >Poorvi Bhatt</a
+                >
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/simi-correia/"
+                  >Simmi Correia</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
       </article>
@@ -94,7 +127,11 @@
       <!-- Card 4 -->
       <article class="card">
         <div class="card-media">
-          <img src="{% static 'company_auth_detail/images/card-4.jpg' %}" alt="Support" loading="lazy">
+          <img
+            src="{% static 'company_auth_detail/images/card-4.jpg' %}"
+            alt="Support"
+            loading="lazy"
+          />
         </div>
         <div class="card-body">
           <h3>Support Center</h3>
@@ -107,31 +144,85 @@
       </article>
 
       <!-- Card 5 -->
-      <article class="card">
-        <div class="card-media">
-          <img src="{% static 'company_auth_detail/images/card-5.jpg' %}" alt="Integrations" loading="lazy">
-        </div>
-        <div class="card-body">
-          <h3>Integrations</h3>
-          <p>Connect your tools — CRMs, analytics, and payment platforms.</p>
-          <div class="card-meta">
-            <span class="badge">Popular</span>
-            <a class="card-cta" href="#">Connect</a>
-          </div>
-        </div>
-      </article>
 
       <!-- Card 6 -->
-
     </div>
   </section>
+  <br />
+  <br /><br /><br /><br />
 
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          <img
+            src="{% static 'company_auth_detail/images/drj.png' %}"
+            alt="Parag Gupta"
+            class="testimonial-img"
+          />
+          <p>
+            "Our partnership with this company has transformed our approach to
+            sustainability. Their insights are invaluable!"
+          </p>
+          <h4>Radha Joshi</h4>
+          <span>CEO of DRJ Phoenix Group</span>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          <img
+            src="{% static 'company_auth_detail/images/parag.png' %}"
+            alt="Parag Gupta"
+            class="testimonial-img"
+          />
+          <p>
+            "Our partnership with this company has transformed our approach to
+            sustainability. Their insights are invaluable!"
+          </p>
+          <h4>Iris DOE</h4>
+          <span>Sustainability Manager at MyCompany</span>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          <img
+            src="{% static 'company_auth_detail/images/green_gene.png' %}"
+            alt="Parag Gupta"
+            class="testimonial-img"
+          />
+          <p>"Great efforts towards calculating Green Wealth."</p>
+          <h4>Parag Gupta</h4>
+          <span>Director of Green Gene</span>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          <img
+            src="{% static 'company_auth_detail/images/tree_council.png' %}"
+            alt="Parag Gupta"
+            class="testimonial-img"
+          />
+          <p>"Amazing service and support, we couldn’t be happier!"</p>
+          <h4>Ojas Acharekar</h4>
+          <span>Tech Lead</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- Pagination (dots) -->
+    <div class="swiper-pagination"></div>
+  </div>
 </main>
+{% endblock %} {% block scripts %}
+<script src="{% static 'company_auth_detail/js/home.js' %}" defer></script>
+<script src="{% static 'company_auth_detail/js/logout.js' %}" defer></script>
 {% endblock %}
-
-{% block scripts %}
-  <script src="{% static 'company_auth_detail/js/home.js' %}" defer></script>
-  <script src="{% static 'company_auth_detail/js/logout.js' %}" defer></script>
-{% endblock %}
-
-
