@@ -22,6 +22,7 @@ from .views import *
 urlpatterns = [
     path("", login_html, name="login_html"),
     path("signup/",register_html,name="register_html"),
+    path("go_green//",go_green,name="go_green"),
     path("company/register/",CompanyRegisterAV.as_view(),name="register"),
     path("company/login/",CompanyLoginAV.as_view(),name="login"),
     path("nextGen-home/",home,name="home"),

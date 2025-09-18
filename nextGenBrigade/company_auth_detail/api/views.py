@@ -36,6 +36,9 @@ def login_html(request):
 def register_html(request):
     return render(request,'company_auth_detail/register.html')
 
+def go_green(request):
+    return render(request,'company_auth_detail/go_green.html')
+
 
 class CompanyRegisterAV(APIView):
     
