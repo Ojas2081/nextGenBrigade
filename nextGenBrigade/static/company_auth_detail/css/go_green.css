@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background: #f2f7f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.1rem;
+}
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+.desc {
+  color: #666;
+}
+
+/* Pricing Section */
+.pricing-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.card h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: #009966;
+}
+.card h2 span {
+  font-size: 1rem;
+  color: #555;
+}
+.card p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+ul {
+  text-align: left;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+ul li {
+  margin-bottom: 0.5rem;
+}
+.check::before {
+  content: "✔ ";
+  color: green;
+}
+.cross::before {
+  content: "✘ ";
+  color: red;
+}
+.note {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+.btn, .btn-outline {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  border-radius: 20px;
+  border: none;
+  margin: 1rem 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn {
+  background: #009966;
+  color: white;
+}
+.btn:hover {
+  background: #007a52;
+}
+.btn-outline {
+  border: 2px solid #009966;
+  color: #009966;
+  background: transparent;
+}
+.btn-outline:hover {
+  background: #009966;
+  color: #fff;
+}
+
+.highlight {
+  border: 2px solid #009966;
+}
+
+/* Footer */
+footer {
+  background: #e8f5f0;
+  padding: 2rem;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.footer-left, .footer-right {
+  flex: 1;
+  min-width: 250px;
+}
+.footer-left h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.footer-left span {
+  color: #009966;
+}
+.footer-right p {
+  margin-bottom: 0.3rem;
+}
+.socials a {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+  color: #666;
+}

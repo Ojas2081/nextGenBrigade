@@ -28,7 +28,7 @@ body {
   
 
   .navbar {
-    min-height: 50px;
+    height: 100px;
     padding: 0.3rem 1rem;
   }
   .navbar-brand {
